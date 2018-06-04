@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function startTimer() {
+		start = setInterval(function() {
+			var today = new Date();
+			document.getElementById("r").innerHTML = today;
+		},1000);
+	}
+	
+	function stopTimer() {
+		clearInterval(start);
+	}
+</script>
+</head>
+<body>
+	현재시간 : <span id="r"></span>
+	<button onclick="startTimer()">타이머 가동</button>
+	<button onclick="stopTimer()">타이머 중지</button>
+</body>
+</html>

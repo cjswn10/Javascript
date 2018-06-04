@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+	window.onload = function() {
+		var li = document.getElementsByTagName("li");
+		for(var i=0; i<li.length; i++) {
+			li[i].ondblclick = function() {
+				document.getElementById("ul").removeChild(this);
+			}
+		}
+	}
+</script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>인생을 살아가면서 중요한 것</h2>
+	<ul id="ul">
+		<li>코딩</li>
+		<li>취업</li>
+		<li>돈</li>
+		<li>건강</li>
+		<li>마음을 주고 받을 대상</li>
+		<li>가족</li>
+		<li>친구</li>
+		<li>에어컨</li>
+		<li>커피</li>
+		<li>좋아하는거 찾기</li>
+		<li>스마트폰</li>
+		<li>그녀</li>
+		<li>사과를 보내준 그녀</li>
+		<li>친구의 여자</li>
+		<li>음악</li>
+		<li>책</li>
+		<li>금지된사랑</li>
+		<li>헬스</li>
+		<li>물</li>
+		<li>목표</li>
+		<li>술</li>
+		<li>행복</li>
+		<li>용기</li>
+		<li>산소</li>
+		<li>꿈</li>
+	</ul>
+</body>
+</html>

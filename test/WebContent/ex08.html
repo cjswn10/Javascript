@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function pro(){
+		arr = ["사과","체리","딸기","망고","수박"];
+		var r = "";
+		for(i=0; i<arr.length; i++)
+		{
+			f = arr[i];
+			r = r + "<li>"+ f + "</li>";
+		}
+		document.getElementById("list").innerHTML = r;
+	}
+
+</script>
+</head>
+<body>
+	<h2>좋아하는 음식</h2>
+	<hr>
+	<ul id="list"></ul>
+	<button onclick="pro()">읽기</button>
+	
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var g = {};
+	g.no=1000;
+	g.item="나이키공";
+	g.price=37000;
+	g.qty=10;
+
+	g.toString = function(){
+		str = "";
+		for (key in this)
+		{
+			if(key != 'toString'){
+				str += key + ": " + this[key] + "\n";
+			}
+		}
+		return str;
+	}
+	
+	function showGoods() {
+		alert(g);
+		//g.toString은 g라고 써도됨
+	}
+	
+	function removeQty() {
+		delete(g.qty);
+	}
+</script>
+</head>
+<body>
+	<button onclick="showGoods()">상품속성 확인</button>
+	<button onclick="removeQty()">상품삭제</button>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function pro() {
+		id = document.getElementById("id").value;
+		if(id.length < 3) {
+			alert("아이디를 확인하세요");
+			return;
+		}
+			
+		pwd = document.getElementById("pwd").value;
+		pwdck = document.getElementById("pwdck").value;
+		
+		if(pwd != pwdck) {
+			alert("비밀번호가 일치하지 않습니다");
+			return;
+		}
+		
+		if(pwd.length < 6) {
+			alert("암호를 6글자 이상 입력하세요");
+			return;
+		}
+		
+		age = document.getElementById("age").value;
+		if(isNaN(age)) {
+			alert("나이는 숫자로 입력하세요");
+			return;
+		}
+		
+		document.f.submit();
+	}
+
+</script>
+</head>
+<body>
+<h2>회원등록</h2>
+<hr>
+	<form name="f" action="result.jsp" method="post">
+		아이디 : <input type="text" name="id" id="id" placeholder="3글자 이상"><br>
+		암호 : <input type="password" name="pwd" id="pwd" placeholder="6글자 이상"><br>
+		암호확인 : <input type="password" name="pwdck" id="pwdck"><br>
+		이름 : <input type="text" name="name" id="name"><br>
+		나이 : <input type="text" name="age" id="age" placeholder="숫자만"><br>
+		<!-- 서버로 갈때는  name 페이지에서 처리할때는 id 필요-->
+		<input type="button" value="확인" onclick="pro()" >
+	</form>
+</body>
+</html>

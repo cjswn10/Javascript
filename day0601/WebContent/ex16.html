@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var arr = [ {
+		no : 1000,
+		item : "까만공",
+		price : 18000,
+		qty : 10,
+		fname : "ball1.jpg"
+	}, {
+		no : 1001,
+		item : "회색공",
+		price : 13000,
+		qty : 20,
+		fname : "ball2.jpg"
+	}, {
+		no : 1002,
+		item : "하얀공",
+		price : 28000,
+		qty : 100,
+		fname : "ball3.jpg"
+	}, {
+		no : 1003,
+		item : "초록공",
+		price : 38000,
+		qty : 50,
+		fname : "ball4.jpg"
+	}, {
+		no : 1004,
+		item : "노란공",
+		price : 258000,
+		qty : 3,
+		fname : "ball5.jpg"
+	} ];
+
+	function pro() {
+		var i = 0;
+		setInterval(function() {
+			fname = "img/" + arr[i].fname;
+			document.getElementById("g").src = fname;
+			str = "";
+			str += ""
+			document.getElementById("no").innerHTML = arr[i].no;
+			document.getElementById("item").innerHTML = arr[i].item;
+			document.getElementById("price").innerHTML = arr[i].price;
+			document.getElementById("qty").innerHTML = arr[i].qty;
+			i++;
+			if (i == arr.length)
+				i = 0;
+		}, 500)
+	}
+</script>
+</head>
+<body onload="pro()">
+	<table>
+		<tr>
+			<td width="300"><img id="g" src="" width="200" height="200"></td>
+			<td>상품번호:<span id="no"></span><br><br>
+			 	상품명:<span id="item"></span><br><br>
+				가격:<span id="price"></span><br><br>
+				수량:<span id="qty"></span>
+			</td>
+		</tr>
+	</table>
+
+</body>
+</html>

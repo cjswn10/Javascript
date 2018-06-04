@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var arr = ['ball1.jpg','ball2.jpg','ball3.jpg','ball4.jpg','ball5.jpg'];
+	function pro(){
+		var img = document.getElementById("g");
+		var i = 0;
+		setInterval(function() {
+			fname = "img/" + arr[i];
+			img.src = fname;
+			i++;
+			if(i == arr.length)
+				i = 0;
+		}, 500)
+		
+	}
+
+</script>
+
+</head>
+<body onload="pro()">
+	<img id="g" src="" width="200" height="200">
+</body>
+</html>

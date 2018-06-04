@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	arr = [
+		{dno:100,dname:"영업팀",dloc:"여의도"},
+		{dno:200,dname:"개발1팀",dloc:"판교"},
+		{dno:300,dname:"개발2팀",dloc:"제주도"},
+		{dno:400,dname:"인사팀",dloc:"판교"},
+		{dno:500,dname:"총무부",dloc:"판교"},
+		{dno:600,dname:"홍보팀",dloc:"합정동"},
+		{dno:700,dname:"개발3팀",dloc:"파주"},
+	];
+	
+	function list() {
+		str = "<table>";
+		str += "<tr>";
+		str += "<td>부서번호</td>";
+		str += "<td>부서명</td>";
+		str += "<td>부서위치</td>";
+		str += "</tr>";
+		
+		for (var i = 0; i < arr.length; i++) {
+			var d = arr[i];
+			str += "<tr>";
+			str += "<td>"+ d.dno +"</td>";
+			str += "<td>"+ d.dname +"</td>";
+			str += "<td>"+ d.dloc +"</td>";
+			str += "</tr>";
+		}
+		str += "</table>";
+		document.getElementById("deptList").innerHTML = str;
+	}
+</script>
+</head>
+<body>
+	<h2>부서목록</h2>
+	<div id="deptList"></div>
+	<hr>
+	<button onclick="list()">출력</button>
+</body>
+</html>

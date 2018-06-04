@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	function sum() {
+		a = eval(document.F.n1.value);
+		b = eval(document.F.n2.value);
+		r = a + b;
+		alert(r);
+	}
+
+</script>
+</head>
+<body>
+	<form name="F">
+		수1 : <input type="text" name="n1"><br>
+		수2 : <input type="text" name="n2"><br>
+		<input type="button" value="더하기" onclick="sum()">
+	</form>
+</body>
+</html>

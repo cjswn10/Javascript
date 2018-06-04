@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	function findMax()
+	{
+		a = eval(document.getElementById("n1").value);
+		b = eval(document.getElementById("n2").value);
+		c = eval(document.getElementById("n3").value);
+		
+		var max = a;
+		if( a < b)
+		{
+			max = b;
+			if(b < c)
+				max = c;
+		}
+		else
+		{
+			if(a < c)
+				max = c;
+		}
+		
+		document.getElementById("result").innerHTML = max;
+	}
+</script>
+<body>
+<!-- 사용자한테 3개의 수를 입력받아 그중에 가장 큰수를 찾아 출력하는 스크립트 작성 
+	입력은 입력양식
+	출력은 span태그
+ㄴ-->
+수1 : <input type="text" id="n1"><br>
+수2 : <input type="text" id="n2"><br>
+수3 : <input type="text" id="n3"><br>
+<button onclick="findMax()">큰수찾기</button>
+결과 : <span id="result"></span>
+</body>
+</html>

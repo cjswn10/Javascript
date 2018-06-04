@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+function calcAge() {
+       
+        var str = document.getElementById("year").value;
+       
+        if(isNaN(str)) {
+               alert("출생년도는 숫자로 입력하세요");
+               return;
+        }
+       
+        year = Number(str);
+        var today = new Date();
+        var thisYear = today.getYear() + 1900;
+       
+        var age = thisYear - year + 1;
+        document.getElementById("age").innerHTML = age;
+}
+</script>
+</head>
+<body>
+       출생연도 : <input type="text" id="year">
+       <button onclick="calcAge()">나이 계산</button>
+       <hr>
+       나이 : <span id="age"></span>
+</body>
+</html>

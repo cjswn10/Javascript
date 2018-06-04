@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+table {
+       border-collapse:collapse;
+}
+</style>
+<script type="text/javascript">
+function pro() {
+       irum = [ '이현진', '한상협', '차건우' ];
+       kor = [ 50, 60, 70 ];
+       eng = [ 80, 90, 100 ];
+       math = [ 90, 100, 70 ];
+       
+       var str = "<table border='1'>";
+       str += "<tr>";
+       str += "<td>이름</td>";
+       str += "<td>국어</td>";
+       str += "<td>영어</td>";
+       str += "<td>수학</td>";
+       str += "<td>총점</td>";
+       str += "<td>평균</td>";
+       str += "</tr>";
+       
+       for(i=0; i < irum.length; i++)
+       {
+              str += "<tr>"
+              str += "<td>" + irum[i] + "</td>";
+              str += "<td>" + kor[i] + "</td>";
+              str += "<td>" + eng[i] + "</td>";
+              str += "<td>" + math[i] + "</td>";
+              
+              total = kor[i] + eng[i] + math[i];
+              avg = total / 3;
+              
+              str += "<td>" + total + "</td>";
+              str += "<td>" + avg + "</td>";
+              str += "</tr>"
+       }
+       str += "</table>";
+       
+       document.getElementById("result").innerHTML = str;
+}
+</script>
+</head>
+<body>
+       <div id="result"></div>
+       <button onclick="pro()">성적 확인</button>
+</body>
+</html>

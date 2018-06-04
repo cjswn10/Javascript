@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var arr = ["이태호","차건우","이현진","김종호","송명준"];
+	var i = 0;
+	function start() {
+		start = setInterval(function() {
+			document.getElementById("r").innerHTML = arr[i++];
+			if(i >= arr.length)
+				i = 0;
+			
+		},500);
+	}
+	
+	function stop() {
+		clearInterval(start);
+	}
+</script>
+</head>
+<body>
+	우리반 인기남 : <span id="r"></span>
+	<button onclick="start()">시작</button>
+	<button onclick="stop()">멈춤</button>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+	window.onload = function() {
+		document.getElementById("btn").onclick = function() {
+			var li = document.createElement("li");
+			var str = document.getElementById("name").value;
+			var txt = document.createTextNode(str);
+			
+			li.appendChild(txt);
+			//자식으로 담아주세요
+			document.getElementById("list").appendChild(li);
+			
+		}
+	}
+</script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>우리반이 좋아하는 과일</h2>
+	<hr>
+	<ul id="list">
+		<li>사과</li>
+		<li>포도</li>
+	</ul>
+	<hr>
+	입력:<input type="text" id="name">
+	<button id="btn">확인</button>
+</body>
+</html>

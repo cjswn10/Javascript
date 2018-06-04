@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript">
+	var w = window.open('','','width=300,height=200');
+	var width=screen.width;
+	var height = screen.height;
+	//모니터의 가로, 세로크기를 변수에 담는다.
+	w.moveTo(0,0);
+	//창의 위치를 왼쪽 상단으로 옮긴다.
+	w.resizeTo(width,height);
+	//창의 크기를 모니터의 가로, 세로만큼 설정한다.
+	setInterval(function(){
+		w.resizeBy(-20,-20);
+		w.moveBy(10,10);
+	},500);
+	//0.5초마다 가로 세로크기를 현재보다 -20씩 작게
+	//창의 위치를 현재위치보다 가로세로 +10씩 이동
+	
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

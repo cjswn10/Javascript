@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function grade() {
+		kor = eval(document.getElementById("kor").value);
+		math = eval(document.getElementById("math").value);
+		eng = eval(document.getElementById("eng").value);
+		
+		total = kor + math + eng;
+		avg = total / 3;
+			document.getElementById("avg").innerHTML = avg;
+		
+		if(avg >= 80)
+			document.getElementById("result").innerHTML = "수";
+		else if(avg >= 60)
+			document.getElementById("result").innerHTML = "우";
+		else if(avg >= 40)
+			document.getElementById("result").innerHTML = "미";
+		else if(avg >= 20)
+			document.getElementById("result").innerHTML = "양";
+		else
+			document.getElementById("result").innerHTML = "가";
+	}
+</script>
+</head>
+<body>
+국어 : <input type="text" id="kor"><br>
+수학 : <input type="text" id="math"><br>
+영어 : <input type="text" id="eng"><br>
+<button onclick="grade()">성적확인</button><br>
+평균 : <span id="avg"></span><br>
+성적 : <span id="result"></span>
+
+</body>
+</html>

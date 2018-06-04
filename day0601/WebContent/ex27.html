@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript">
+var w = window.open('','','width=300,height=180');
+var width=screen.width;
+var height=screen.height;
+
+w.moveTo(width/2,height/2);
+
+setInterval(function(){
+	w.resizeBy(20,20);
+	w.moveBy(-10,-10);
+	if(w.width>=screen.availWidth && w.height>=screen.availHeight){
+		w.close();
+	}
+},500);
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

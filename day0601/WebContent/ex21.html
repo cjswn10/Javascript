@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+function p(){
+	w=window.open("","","width=300,height=100");
+}
+function ml() {
+	w.moveTo(0,0);
+}
+function m(){
+	e=setInterval(function(){
+		w.moveBy(10,10);
+	},100);
+}
+function stop(){
+	clearInterval(e);
+}
+function s(){
+	w.close();
+}
+</script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick="p()">창띄우기</button>
+	<button onclick="ml()">왼쪽위로 창 움직이기</button>
+	<button onclick="m()">창 움직이기</button>
+	<button onclick="stop()">창 멈추기</button>
+	<button onclick="s()">창 닫기</button>
+</body>
+</html>

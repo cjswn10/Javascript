@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 추가, 수정, 삭제 -->
+<script type="text/javascript">
+window.onload = function() {
+	var input = document.getElementsByTagName("input");
+	var tds;
+	var selTr;
+	
+	document.getElementById("btnAdd").onclick = function() {
+
+		var tr = document.createElement("tr");
+		
+		document.getElementById("tb").appendChild(tr);
+		
+		for(var i=0; i<input.length; i++) {
+			var td = document.createElement("td");
+			td.appendChild(document.createTextNode(input[i].value));
+			tr.appendChild(td);
+		}
+		
+		tr.onmouseover = function() {
+			if(this != selTr)
+				this.style.backgroundColor = "pink";
+		}
+		
+		tr.onmouseout = function() {
+			if(this != selTr)
+				this.style.backgroundColor = "white";
+		}
+		
+		tr.onclick=function(){
+			selTr = this;
+			
+			var trs = document.getElementsByTagName("tr");
+			for(var i=0; i<trs.length;i++) {
+				trs[i].style.background = "white";
+			}
+			tds = this.childNodes;
+			for(var i= 0; i < tds.length; i++) {
+				input[i].value = tds[i].innerHTML;
+			}
+			this.style.backgroundColor = "yellow";
+			
+		}
+		
+		document.getElementById("name").value = "";
+		document.getElementById("kor").value = "";
+		document.getElementById("eng").value = "";
+		document.getElementById("math").value = "";
+	}
+	
+	document.getElementById("btnUpdate").onclick = function() {
+		for(var i=0; i<tds.length; i++) {
+			tds[i].innerHTML = input[i].value;
+		}
+	}
+	
+	document.getElementById("btnDelete").onclick = function() {
+		
+		document.getElementById("tb").removeChild(selTr);
+	}
+	
+}
+</script>
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	이름 : <input type="text" id="name"><br>
+	국어 : <input type="text" id="kor"><br>
+	영어 : <input type="text" id="eng"><br>
+	수학 : <input type="text" id="math"><br>
+	<button id="btnAdd">등록</button>
+	<button id="btnUpdate">수정</button>
+	<button id="btnDelete">삭제</button>
+	<hr>
+	<table border="1" width="60%" id="tb">
+		<tr>
+			<td>이름</td>
+			<td>국어</td>
+			<td>영어</td>
+			<td>수학</td>
+		</tr>
+	</table>
+</body>
+</html>

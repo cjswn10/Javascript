@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+function insert() {
+	var name = document.getElementById("name").value;
+	var kor = eval(document.getElementById("kor").value);
+	var eng = eval(document.getElementById("eng").value);
+	var math = eval(document.getElementById("math").value);
+	var total = kor+eng+math;
+	var avg = total / 3;
+	
+	var tr = document.createElement("tr");
+	var td1 = document.createElement("td");
+	var td2 = document.createElement("td");
+	var td3 = document.createElement("td");
+	var td4 = document.createElement("td");
+	var td5 = document.createElement("td");
+	var td6 = document.createElement("td");
+
+	document.getElementById("tb").appendChild(tr);
+	
+	td1.appendChild(document.createTextNode(name));
+	td2.appendChild(document.createTextNode(kor));
+	td3.appendChild(document.createTextNode(eng));
+	td4.appendChild(document.createTextNode(math));
+	td5.appendChild(document.createTextNode(total));
+	td6.appendChild(document.createTextNode(avg));
+	
+	tr.appendChild(td1);
+	tr.appendChild(td2);
+	tr.appendChild(td3);
+	tr.appendChild(td4);
+	tr.appendChild(td5);
+	tr.appendChild(td6);
+	
+	document.getElementById("name").value = "";
+	document.getElementById("kor").value = "";
+	document.getElementById("eng").value = "";
+	document.getElementById("math").value = "";
+}
+
+</script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+이름 : <input type="text" id="name"><br>
+국어 : <input type="text" id="kor"><br>
+영어 : <input type="text" id="eng"><br>
+수학 : <input type="text" id="math"><br>
+<button onclick="insert()">추가</button>
+<table border="1" width="60%" id="tb">
+	<tr>
+		<td>이름</td>
+		<td>국어</td>
+		<td>영어</td>
+		<td>수학</td>
+		<td>총점</td>
+		<td>평균</td>
+	</tr>
+	<tr>
+		<td>임연주</td>
+		<td>100</td>
+		<td>100</td>
+		<td>100</td>
+		<td>300</td>
+		<td>100</td>
+	</tr>
+</table>
+</body>
+</html>

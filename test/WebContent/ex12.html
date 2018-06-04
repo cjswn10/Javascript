@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	function pro()
+	{
+		fname = "sun.png";
+		time = new Date();
+		hours = time.getHours();
+		if(hours >= 18)
+		{
+			fname = "moon.png";	
+		}
+		
+		document.getElementById("imgs").src = fname;
+	}
+</script>
+
+<body onload="pro()">
+	<img src="" id="imgs">
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function pro() {
+		email = document.getElementById("email").value;
+		var n = email.indexOf("@");
+		id = email.substring(0, n);
+		document.getElementById("id").innerHTML = id;
+	}
+
+</script>
+</head>
+<body>
+	이메일 :<input type="email" id="email"><br>
+	<button onclick="pro()">아이디 출력</button><br>
+	아이디:<span id="id"></span>
+</body>
+</html>

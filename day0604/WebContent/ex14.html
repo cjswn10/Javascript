@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+	window.onload = function() {
+		var kor = ["이름","국어","영어","수학"];
+		var eng = ["name","kor","eng","math"];
+		
+		var h2 = document.getElementsByTagName("h2");
+
+		document.getElementById("btnEng").onclick = function() {
+			for(var i=0; i<h2.length; i++){
+				h2[i].innerHTML = eng[i];	
+			}
+		}
+		
+		document.getElementById("btnKor").onclick = function() {
+			for(var i=0; i<h2.length; i++){
+				h2[i].innerHTML = kor[i];	
+			}
+		}
+	}
+
+</script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>이름</h2>
+	<h2>국어</h2>
+	<h2>영어</h2>
+	<h2>수학</h2>
+	
+	<button id="btnKor">한글</button>
+	<button id="btnEng">영어</button>
+</body>
+</html>

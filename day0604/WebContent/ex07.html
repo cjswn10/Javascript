@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+	window.onload = function() {
+		document.getElementById("btnImg").onclick = function() {
+			var img = document.createElement("img");
+			img.src = "xiumin.jpg";
+			img.width = "200";
+			img.height = "200";
+			
+			document.getElementById("info").appendChild(img);
+		}
+	}
+</script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>프로필</h1>
+	<div id="info">
+	이름	: 시우민<br>
+	특징 : 잘생김<br>
+	</div>
+	<button id="btnImg">이미지</button>
+	
+</body>
+</html>

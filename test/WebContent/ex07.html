@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	function sum() {
+		a = eval(document.getElementById("n1").value);
+		b = eval(document.getElementById("n2").value);
+		
+		document.getElementById("result").innerHTML = a + b;		
+	}
+
+</script>
+</head>
+<body>
+		수1 : <input type="text" id="n1"><br>
+		수2 : <input type="text" id="n2"><br>
+		결과 : <font color="tomato"><span id="result"></span></font><br>
+		<input type="button" value="더하기" onclick="sum()">
+</body>
+</html>

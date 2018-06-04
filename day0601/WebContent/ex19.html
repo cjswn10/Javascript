@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+ function pro() {
+	var str = "우리는 자바스크립트에 대해 공부하고 있습니다. 현재는 자바스크립트가 중요하게 여겨 지고 있습니다. 이것을 잘해야 앞으로 공부할 AJAX, jquery를 잘할 수 있을 것 같습니다. 화이팅!!";
+	var i = 1;
+	setInterval(function() {
+		var s = str.substring(0, i);
+		document.getElementById("msg").innerHTML = s;
+		i++;
+		if(i == str.length)
+			i = 1;
+	},100);
+}
+</script>
+</head>
+<body onload="pro()">
+	오늘의 메세지 : <span id="msg"></span>
+</body>
+</html>

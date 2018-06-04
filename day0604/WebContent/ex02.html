@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+	window.onload = function() {
+		document.getElementById("btn").onclick = function() {
+			var info = navigator.userAgent;
+			document.getElementById("r").innerHTML = info;
+		}
+	}
+</script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>요청한 클라이언트의 브라우저 정보</h2>
+	<hr>
+	<div id="r"></div>
+	<button id="btn">확인</button>
+</body>
+</html>

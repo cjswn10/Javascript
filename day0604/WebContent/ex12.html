@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function () {
+		document.getElementById("btn").onclick = function () {
+			var tds = document.getElementsByTagName("td");
+			var input = document.getElementsByTagName("input");
+			
+			for(var i=0; i<tds.length;i++) {
+				input[i].value = tds[i].innerHTML
+			}
+		}
+   }
+</script>
+</head>
+<body>
+   이름 : <input type="text" id="name"><br>
+   국어 : <input type="text" id="kor"><br>
+   영어 : <input type="text" id="eng"><br>
+   수학 : <input type="text" id="math"><br>
+
+   <table border="1" width="60%" id="tb">
+      <tr>   
+         <td>임연주</td>
+         <td>60</td>
+         <td>70</td>
+         <td>80</td>
+      </tr>
+   </table>
+   <button id="btn">등록</button>
+</body>
+</html>
+
