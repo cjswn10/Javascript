@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+
+		document.getElementById("myForm").onsubmit = function() {
+
+			var pwd = document.getElementById("pwd").value;
+			var pwdCk = document.getElementById("pwdCk").value;
+			
+			if(pwd != pwdCk){
+				alert("암호를 확인하세요");
+				return false;
+			}
+		}
+
+	}
+</script>
+</head>
+<body>
+	<h2>회원 정보 입력</h2>
+	<hr>
+	<form action="result.jsp" method="post" id="myForm">
+		<label for="name">이름</label> <input type="text" name="name" id="name"><br>
+
+		<label for="pwd">암호</label> <input type="password" name="pwd" id="pwd"><br>
+
+		<label for="pwdCk">암호확인</label> <input type="password" name="pwdCk"
+			id="pwdCk"><br> <input type="submit" value="확인">
+
+	</form>
+</body>
+</html>

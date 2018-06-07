@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 배열 목록 보여주지, mouseover상세정보, dbclick삭제 -->
+<script type="text/javascript">
+	var arr = [
+		{no:1000,item:"나이키 까만공",price:38000,qty:10,fname:"ball1.jpg"},
+		{no:1001,item:"나이키 회색공",price:28000,qty:50,fname:"ball2.jpg"},
+		{no:1002,item:"나이키 하얀공",price:7000,qty:15,fname:"ball3.jpg"},
+		{no:1003,item:"나이키 초록공",price:67000,qty:20,fname:"ball4.jpg"},
+		{no:1004,item:"나이키 노란공",price:125000,qty:5,fname:"ball5.jpg"}
+	];
+	
+	window.onload = function() {
+		//table id없이 만드는 방법
+		var tbArr = document.getElementsByTagName("table");
+		var tb = tbArr[0];
+		
+		
+		for(var i = 0; i < arr.length; i++){
+			var tr = document.createElement("tr");
+			tr.setAttribute("idx", i);
+			tb.appendChild(tr);
+			
+			var g = arr[i];
+			var tdNo = document.createElement("td");
+			var tdItem = document.createElement("td");
+
+			tdNo.appendChild(document.createTextNode(g.no));
+			tdItem.appendChild(document.createTextNode(g.item));
+			
+			tr.appendChild(tdNo);
+			tr.appendChild(tdItem);
+
+			tr.onmouseover = function() {
+				var n = this.getAttribute("idx");
+				var g = arr[n];
+				this.style.backgroundColor = "yellow";
+				
+				var mtb = document.createElement("table");
+				mtb.border = "1";
+				mtb.style.borderCollapse = "collapse";
+				mtb.style.width = "40%";
+				var mtr = document.createElement("tr");
+				var mtdImg = document.createElement("td");
+				var mtdOthers = document.createElement("td");
+				
+				var pNo = document.createElement("p");
+				var pItem = document.createElement("p");
+				var pPrice = document.createElement("p");
+				var pQty = document.createElement("p");
+
+				var img = document.createElement("img");
+				img.src = "img/"+g.fname;
+				img.width = "200";
+				img.height = "200";
+				
+				pNo.appendChild(document.createTextNode(g.no));
+				pItem.appendChild(document.createTextNode(g.item));
+				pPrice.appendChild(document.createTextNode(g.price));
+				pQty.appendChild(document.createTextNode(g.qty));
+				
+				mtdImg.appendChild(img);
+				mtdOthers.appendChild(pNo);
+				mtdOthers.appendChild(pItem);
+				mtdOthers.appendChild(pPrice);
+				mtdOthers.appendChild(pQty);
+				
+				mtr.appendChild(mtdImg);
+				mtr.appendChild(mtdOthers);
+				mtb.appendChild(mtr);
+				
+				document.getElementById("detail").innerHTML="";
+				document.getElementById("detail").appendChild(mtb);
+			}
+			
+			tr.onmouseout = function() {
+				this.style.backgroundColor = "white";
+			}
+			
+			tr.ondblclick = function() {
+				var n = this.getAttribute("idx");
+				var g = arr[n];
+				document.getElementById("tb").removeChild(this);
+			}
+		}
+		
+		
+	}
+</script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>상품목록</h2>
+	<hr>
+	<table border="1" width="60%" id="tb">
+		<tr>
+			<td>상품번호</td>
+			<td>상품명</td>
+		</tr>
+	</table>
+	<div id="detail"></div>
+</body>
+</html>

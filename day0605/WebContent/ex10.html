@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function(){
+	
+	var h = document.getElementById("h");
+	h.onclick = function(){
+		alert("ok");
+		h.onclick = null;
+	}
+}
+</script>
+</head>
+<body>
+<h1 id="h">홍길동</h1>
+</body>
+</html>

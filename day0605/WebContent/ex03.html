@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+	var arr = [
+		{no:1000,item:"나이키 까만공",price:38000,qty:10,fname:"ball1.jpg"},
+		{no:1001,item:"나이키 회색공",price:28000,qty:50,fname:"ball2.jpg"},
+		{no:1002,item:"나이키 하얀공",price:7000,qty:15,fname:"ball3.jpg"},
+		{no:1003,item:"나이키 초록공",price:67000,qty:20,fname:"ball4.jpg"},
+		{no:1004,item:"나이키 노란공",price:125000,qty:5,fname:"ball5.jpg"}
+	];
+	
+	window.onload = function() {
+		var i = 0;
+		setInterval(function() {
+			var g = arr[i];
+			
+			var tb = document.createElement("table");
+			var tr = document.createElement("tr");
+			var tdImg = document.createElement("td");
+			var tdOthers = document.createElement("td");
+			
+			var pNo = document.createElement("p");
+			var pItem = document.createElement("p");
+			var pPrice = document.createElement("p");
+			var pQty = document.createElement("p");
+
+			var img = document.createElement("img");
+			img.src = "img/"+g.fname;
+			img.width = "200";
+			img.height = "200";
+			
+			pNo.appendChild(document.createTextNode(g.no));
+			pItem.appendChild(document.createTextNode(g.item));
+			pPrice.appendChild(document.createTextNode(g.price));
+			pQty.appendChild(document.createTextNode(g.qty));
+			
+			tdImg.appendChild(img);
+			tdOthers.appendChild(pNo);
+			tdOthers.appendChild(pItem);
+			tdOthers.appendChild(pPrice);
+			tdOthers.appendChild(pQty);
+			
+			tr.appendChild(tdImg);
+			tr.appendChild(tdOthers);
+			tb.appendChild(tr);
+			
+			document.getElementById("detail").innerHTML="";
+			document.getElementById("detail").appendChild(tb);
+			
+			i++;
+			
+			if(i == arr.length)
+				i = 0;
+		}, 500)
+	}
+</script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="detail"></div>
+</body>
+</html>

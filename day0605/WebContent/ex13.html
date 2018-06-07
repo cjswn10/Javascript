@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+
+		btnKim = document.getElementById("btnKim");
+		btnCha = document.getElementById("btnCha");
+		kim = document.getElementById("kim");
+		cha = document.getElementById("cha");
+
+		btnKim.onclick = function() {
+
+			kim.innerHTML = eval(kim.innerHTML) + 1;
+
+		}
+		btnCha.onclick = function() {
+
+			cha.innerHTML = eval(cha.innerHTML) + 1;
+			btnKim.onclick();
+		}
+
+	}
+</script>
+</head>
+<body>
+	<button id="btnKim">김태욱</button>
+	<button id="btnCha">차건우</button>
+	<h1>
+		김태욱 <span id="kim">0</span>
+	</h1>
+	<h1>
+		차건우 <span id="cha">0</span>
+	</h1>
+</body>
+</html>

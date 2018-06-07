@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+
+	var arr = [
+		{no:1000,item:"나이키 까만공",price:38000,qty:10,fname:"ball1.jpg"},
+		{no:1001,item:"나이키 회색공",price:28000,qty:50,fname:"ball2.jpg"},
+		{no:1002,item:"나이키 하얀공",price:7000,qty:15,fname:"ball3.jpg"},
+		{no:1003,item:"나이키 초록공",price:67000,qty:20,fname:"ball4.jpg"},
+		{no:1004,item:"나이키 노란공",price:125000,qty:5,fname:"ball5.jpg"}
+	];
+
+	window.onload = function() {
+		var tbArr = document.getElementsByTagName("table");
+		var tb = tbArr[0];	
+		
+		for(var i = 0; i < arr.length; i++){
+			var tr = document.createElement("tr");
+			tb.appendChild(tr);
+			
+			var g = arr[i];
+			var tdNo = document.createElement("td");
+			var tdItem = document.createElement("td");
+
+			tdNo.appendChild(document.createTextNode(g.no));
+			tdItem.appendChild(document.createTextNode(g.item));
+			
+			tr.appendChild(tdNo);
+			tr.appendChild(tdItem);
+		}
+		
+		var i = 0;
+		
+		
+		setInterval(function() {
+			var trList = tbArr[0].childNodes;
+			//tbArr[0]의 tr들의 배열
+			for(var a = 0; a <trList.length; a++) {
+				trList[a].style.background = "white";
+			}
+			
+			trList[i+1].style.background = "yellow";
+			//제목 빼고 인덱스 1~6까지
+			var g = arr[i];
+			
+			var mtb = document.createElement("table");
+			var mtr = document.createElement("tr");
+			var mtdImg = document.createElement("td");
+			var mtdOthers = document.createElement("td");
+			
+			var pNo = document.createElement("p");
+			var pItem = document.createElement("p");
+			var pPrice = document.createElement("p");
+			var pQty = document.createElement("p");
+
+			var img = document.createElement("img");
+			img.src = "img/"+ g.fname;
+			img.width = "200";
+			img.height = "200";
+			
+			pNo.appendChild(document.createTextNode(g.no));
+			pItem.appendChild(document.createTextNode(g.item));
+			pPrice.appendChild(document.createTextNode(g.price));
+			pQty.appendChild(document.createTextNode(g.qty));
+			
+			mtdImg.appendChild(img);
+			mtdOthers.appendChild(pNo);
+			mtdOthers.appendChild(pItem);
+			mtdOthers.appendChild(pPrice);
+			mtdOthers.appendChild(pQty);
+			
+			mtr.appendChild(mtdImg);
+			mtr.appendChild(mtdOthers);
+			mtb.appendChild(mtr);
+			
+			document.getElementById("detail").innerHTML="";
+			document.getElementById("detail").appendChild(mtb);
+			
+			i++;
+			
+			if(i == arr.length)
+				i = 0;
+		}, 1000);
+	}
+
+</script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>상품목록</h2>
+	<hr>
+	<table border="1" width="60%" id="tb"><tr><td>상품번호</td><td>상품명</td></tr></table>
+	<!-- 공백 없이 만들어 줘야 table의 childNodes를 뽑았을 때 인덱스가 정확히 나옴.
+	공백이 있을 경우 원래인덱스보다 많게 나옴 -->
+	<div id="detail"></div>
+</body>
+</html>

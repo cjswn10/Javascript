@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 태양,지구,달 공전 -->
+<script type="text/javascript">
+	window.onload = function() {
+		var sun = document.getElementById('sun');
+		var earth = document.getElementById('earth');
+		var moon = document.getElementById('moon');
+		
+		sun.style.position = 'absolute';
+		earth.style.position = 'absolute';
+		moon.style.position = 'absolute';
+		
+		sun.style.left = 250 + 'px';
+		sun.style.top = 200 + 'px';
+		
+		var earthAngle = 0;
+		var moonAngle = 0;
+		
+		setInterval(function() {
+			var earthLeft = 250 + 150 * Math.cos(earthAngle);
+			var earthTop = 200 + 150 * Math.sin(earthAngle);
+			var moonLeft = earthLeft + 50 * Math.cos(moonAngle);
+			var moonTop = earthTop + 50 * Math.sin(moonAngle);
+			
+			earth.style.left = earthLeft + 'px';
+			earth.style.top = earthTop + 'px';
+			moon.style.left = moonLeft + 'px';
+			moon.style.top = moonTop + 'px';
+			
+			earthAngle += 0.1;
+			moonAngle += 0.3;
+		}, 1000/30)
+	}
+</script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 id='sun'><img src="img/sun.png" width="100" height="100"></h1>
+	<h1 id='earth'><img src="img/earth.jpg" width="50" height="50"></h1>
+	<h1 id='moon'><img src="img/moon.png" width="20" height="20"></h1>
+</body>
+</html>

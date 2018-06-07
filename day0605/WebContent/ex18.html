@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+* {
+	border: 1px solid pink;
+}
+</style>
+
+<script type="text/javascript">
+function pro(){
+	
+	alert("p노드");
+	
+	var event = window.event;
+	event.stopPropagation();
+	
+}
+
+</script>
+</head>
+<body>
+	<div id="a" onclick="alert('레이어1')">
+		레이어 1번<br>
+		<div onclick="alert('레이어2')">
+			레이어 2번<br>
+			<h1 onclick="alert('h1 노드')">
+				h1 노드
+				<p onclick="pro()">내일은 머할까요?</p>
+			</h1>
+		</div>
+	</div>
+</body>
+</html>

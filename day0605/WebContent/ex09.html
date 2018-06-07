@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+		
+		var h2List = document.getElementsByTagName("h2");
+		
+		for(var i=0; i<h2List.length; i++){
+			
+			h2List[i].ondblclick = function(){
+				
+				document.getElementById("name").value = this.innerHTML;
+				
+			}
+		}
+		
+	}
+</script>
+</head>
+<body>
+	선택된 팀원
+	<input type="text" id="name">
+	<hr>
+	<h2>송명준</h2>
+	<h2>조성재</h2>
+	<h2>한상협</h2>
+	<h2>양동훈</h2>
+	<h2>이태호</h2>
+</body>
+</html>
