@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var arr = [
+			{no:1000,item:"나이키 까만공",price:38000,qty:10,fname:"ball1.jpg"},
+			{no:1001,item:"나이키 회색공",price:18000,qty:5,fname:"ball2.jpg"},
+			{no:1002,item:"나이키 하얀공",price:7900,qty:3,fname:"ball3.jpg"},
+			{no:1003,item:"나이키 초록공",price:27000,qty:10,fname:"ball4.jpg"},
+			{no:1004,item:"나이키 노란공",price:18000,qty:10,fname:"ball5.jpg"}
+		];
+		
+		$.each(arr, function(i, g) {
+			var tr = $("<tr></tr>");
+			$(tr).attr("idx", i);
+			var td1 = $("<td></td>").html(g.no);
+			var td2 = $("<td></td>").html(g.item);
+			
+			$(tr).append(td1, td2);
+			$("#tb").append(tr);
+			
+			$(tr).mouseover(function() {
+				var idx = $(this).attr("idx");
+				var g = arr[idx];
+			
+				$("#img").attr("src", "img/"+g.fname);
+				$("#no").text(g.no);
+				$("#item").text(g.item);
+				$("#price").text(g.price);
+				$("#qty").text(g.qty);
+			
+			})
+		})
+	});
+</script>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<table id="tb" border="1" width="60%">
+		<tr>
+			<td>상품번호</td>
+			<td>상품명</td>
+		</tr>
+	</table>
+	<hr>
+	<table id="detail">
+		<tr>
+			<td>
+				<img id="img" src="">
+			</td>
+			<td>
+				<p id="no"></p>
+				<p id="item"></p>
+				<p id="price"></p>
+				<p id="qty"></p>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

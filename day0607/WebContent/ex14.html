@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("select").change(function() {
+			var fname = $("select > option:selected").val();
+			$("#img01").attr("src", "img/" + fname)
+		});
+	});
+</script>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<select>
+	<option value="ball1.jpg">축구공</option>
+	<option value="cloth1.jpg">유니폼</option>
+	<option value="stock1.jpg">스타킹</option>
+	<option value="shoe1.jpg">축구화</option>
+</select>
+<img id="img01" src="">
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var arr = [
+		    {name:"한빛미디어",link:"http://www.hanbit.co.kr"},
+		    {name:"비트캠프",link:"http://www.bitcamp.co.kr"},
+		    {name:"구글",link:"http://www.google.com"},
+		    {name:"네이버",link:"http://www.naver.com"}
+		];
+		var str = "";
+		$.each(arr, function(i,item){
+			str = str + "<a href='"+item.link + "'>";
+			str = str + "<h1>" + item.name+ "</h1>";
+			str = str + "</a>";
+		});
+		
+		document.body.innerHTML = str;
+	});
+</script>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

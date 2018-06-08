@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var arr = [
+			{name:"임연주",kor:100,eng:100,math:100},
+			{name:"변성인",kor:90,eng:80,math:70},
+			{name:"차건우",kor:70,eng:80,math:90}
+		];
+		
+		$("#btnRead").click(function() {
+			$("#tb").html("<tr><td>이름</td><td>국어</td><td>영어</td><td>수학</td></tr>");
+			
+			$.each(arr, function(i, student){
+				var tr = $("<tr></tr>");
+				var td1 = $("<td></td>").text(student.name);
+				var td2 = $("<td></td>").text(student.kor);
+				var td3 = $("<td></td>").text(student.eng);
+				var td4 = $("<td></td>").text(student.math);
+				
+				$(tr).append(td1);
+				$(tr).append(td2);
+				$(tr).append(td3);
+				$(tr).append(td4);
+				
+				$("#tb").append(tr);
+			});
+			
+		})
+	});
+</script>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<button id="btnRead">읽어오기</button>
+	<table id="tb" width="60%" border="1"></table>
+</body>
+</html>

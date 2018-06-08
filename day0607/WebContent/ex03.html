@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#btnLee").click(function() {
+			$("#lee").css("color", "red");				
+		});
+		
+		$("#btnAll").click(function() {
+			$("h2").css("color", "blue");
+		});
+		
+		$("#btnLeader").click(function() {
+			$(".leader").css("color", "green");
+		});
+	});
+</script>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2 class="leader">이현진</h2>
+	<h2>김태욱</h2>
+	<h2>박은지</h2>
+	<h2>박가영</h2>
+	<h2>최혜정</h2>
+	<h2>박주희</h2>
+	<h2>한상협</h2>
+	<h2>조성재</h2>
+	<h2>김종호</h2>
+	<h2>양동훈</h2>
+	<h2 class="leader">송명준</h2>
+	<h2 id="lee">이태호</h2>
+	
+	<button id="btnLee">이태호</button>
+	<button id="btnAll">모두선택</button>
+	<button id="btnLeader">팀장선택</button>
+</body>
+</html>

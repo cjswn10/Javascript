@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#btnAll").click(function() {
+			$("li").css("color", "pink");
+		});
+		
+		$("#btnPo").click(function() {
+			$(".jesa").css("color", "green");
+		});
+		
+		$("#btnFav").click(function() {
+			$("#favo").css("color", "red");
+		})
+		
+	});
+</script>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<ul>
+		<li>아보카도</li>
+		<li>체리</li>
+		<li class="jesa" id="favo">수박</li>
+		<li>두리안</li>
+		<li>블루베리</li>
+		<li class="jesa">사과</li>
+		<li class="jesa">배</li>
+		<li>키위</li>
+		<li class="jesa">포도</li>
+		<li class="jesa">바나나</li>
+	</ul>
+	
+	<!-- 수박, 사과, 배, 포도, 감 -->
+	<button id="btnAll">과일 모두 선택</button>
+	<button id="btnPo">제사상에 올라 갈수 있는 과일</button>
+	<button id="btnFav">내가 제일 좋아하는 과일 하나는?</button>
+</body>
+</html>
