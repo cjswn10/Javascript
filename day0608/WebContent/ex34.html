@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("#add").click(function() {
+		var img = $("<img/>").attr({
+			src:"img/ce.gif",
+			width:200,
+			height:200
+		});
+		$(img).appendTo("#r");
+	})
+	
+	
+});
+
+</script>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="r"></div>
+	<button id="add">그림추가</button>
+	<!-- 그림추가 버튼을 누르면 div태그에 그림추가 -->
+</body>
+</html>

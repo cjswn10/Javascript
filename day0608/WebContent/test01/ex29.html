@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	//$("h2").css("color", "tomato").css("background", "pink");
+	var arr = ["tomato", "pink", "yellow", "black", "teal", "orange"];
+	$("h2").css({
+		background:function(i){
+			return arr[i];
+		},
+		color : "white"
+	})
+	
+});
+
+</script>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>콜라</h2>
+	<h2>막걸리</h2>
+	<h2>강냉이</h2>
+	<h2>땅콩</h2>
+	<h2>수박</h2>
+</body>
+</html>

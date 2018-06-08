@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("img").attr({
+		width:200,
+		height:200
+	});
+	
+	setInterval(function() {
+		$("img").first().appendTo("#x");
+	}, 500)
+});
+
+</script>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<div id="x">
+	<img src="img/gong.jpg">
+	<img src="img/hyun.jpg">
+	<img src="img/xiumin.jpg">
+	<img src="img/y.gif">
+	<img src="img/ce.gif">
+</div>
+	<hr>
+</body>
+</html>

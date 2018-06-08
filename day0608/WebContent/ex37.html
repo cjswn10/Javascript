@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.item {
+	background : pink;
+	border : tomato 3px solid;
+	margin: 10px;
+	padding: 5px;
+	border-radius: 20px;
+	text-align:center;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	var arr = [
+		{no:1000,item:"나이키 까만공",price:38000,qty:10,fname:"img/ball1.jpg"},
+		{no:1001,item:"나이키 회색공",price:27000,qty:5,fname:"img/ball2.jpg"},
+		{no:1002,item:"나이키 초록공",price:18000,qty:10,fname:"img/ball3.jpg"},
+		{no:1003,item:"나이키 하얀공",price:5000,qty:15,fname:"img/ball4.jpg"},
+		{no:1004,item:"나이키 노란공",price:125000,qty:10,fname:"img/ball5.jpg"}
+	];
+	
+	$.each(arr, function(i, g) {
+		var div = $("<div></div>").css({
+			float:"left",
+			width:200,
+			height:400
+		});
+		
+		$(div).addClass("item");
+		
+		var img = $("<img/>").attr({
+			src:g.fname,
+			width:200,
+			height:200
+		});
+		
+		var p1 =$("<p></p>").html(g.no);
+		var p2 =$("<p></p>").html(g.item);
+		var p3 =$("<p></p>").html(g.price);
+		var p4 =$("<p></p>").html(g.qty);
+		
+		$(div).append(img, p1, p2, p3, p4);
+		$("#list").append(div);
+	});
+	
+	setInterval(function() {
+		$(".item").first().appendTo("#list");
+	}, 1000)
+});
+
+</script>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="list"></div>
+</body>
+</html>

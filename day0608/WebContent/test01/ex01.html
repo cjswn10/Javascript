@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+.highlight{
+	background : orange;
+}
+
+.active {
+	background : pink;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		
+		var tds;
+		var selTr;
+		var arr = $("input[type='text']");
+
+		$("#btnInsert").click(function() {
+			var name = $("#name").val()
+			var kor = eval($("#kor").val());
+			var eng = eval($("#eng").val());
+			var math = eval($("#math").val());
+			var total = kor + eng + math;
+			var avg = total / 3;
+			
+			var tr = $("<tr></tr>");
+			var td1 = $("<td></td>").html(name);
+			var td2 = $("<td></td>").html(kor);
+			var td3 = $("<td></td>").html(eng);
+			var td4 = $("<td></td>").html(math);
+			var td5 = $("<td></td>").html(total);
+			var td6 = $("<td></td>").html(avg);
+			
+			$(tr).append(td1, td2, td3, td4, td5, td6);
+			$("#tb").append(tr);
+			
+			$(tr).click(function() {
+				
+				tds = $(this).find("td");
+				selTr = $(this);
+				
+				$("tr").removeClass("active");
+				$(this).addClass("active");
+
+				$.each(arr, function(i, input) {
+					$(this).val( $(tds[i]).html() );
+				});
+				
+			});
+			
+			
+			$(tr).mouseover(function() {
+				$(this).addClass("highlight");
+			});
+			
+			$(tr).mouseout(function() {
+				$(this).removeClass("highlight");
+			});
+			
+		});
+		
+		$("#btnUpdate").click(function() {
+			var name = $("#name").val()
+			var kor = eval($("#kor").val());
+			var eng = eval($("#eng").val());
+			var math = eval($("#math").val());
+			var total = kor + eng + math;
+			var avg = total / 3;
+			
+			$(tds[0]).html(name);
+			$(tds[1]).html(kor);
+			$(tds[2]).html(eng);
+			$(tds[3]).html(math);
+			$(tds[4]).html(total);
+			$(tds[5]).html(avg);
+		});
+		
+		$("#btnDelete").click(function() {
+			$(selTr).remove();
+		});
+		
+	});
+</script>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	이름 : <input type="text" id="name"><br>
+	국어 : <input type="text" id="kor"><br>
+	영어 : <input type="text" id="eng"><br>
+	수학 : <input type="text" id="math"><br>
+	<button id="btnInsert">등록</button>
+	<button id="btnUpdate">수정</button>
+	<button id="btnDelete">삭제</button>
+	
+	<table id="tb" border="1" width="60%">
+		<tr>
+			<td>이름</td>
+			<td>국어</td>
+			<td>영어</td>
+			<td>수학</td>
+			<td>총점</td>
+			<td>평균</td>
+		</tr>
+	</table>
+</body>
+</html>

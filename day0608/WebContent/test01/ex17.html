@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	var xml = "";
+	xml += '<deptList>';
+	xml += '<dept>';
+	xml += '<dno>100</dno>';
+	xml += '<dname>¿µ¾÷ÆÀ</dname>';
+	xml += '<dloc>¿©ÀÇµµ</dloc>';
+	xml += '</dept>';
+	
+	xml += '<dept>';
+	xml += '<dno>200</dno>';
+	xml += '<dname>°³¹ß1ÆÀ</dname>';
+	xml += '<dloc>ÆÇ±³</dloc>';
+	xml += '</dept>';
+	
+	xml += '<dept>';
+	xml += '<dno>300</dno>';
+	xml += '<dname>°³¹ß2ÆÀ</dname>';
+	xml += '<dloc>Á¦ÁÖµµ</dloc>';
+	xml += '</dept>';
+	
+	xml += '<dept>';
+	xml += '<dno>400</dno>';
+	xml += '<dname>ÀÎ»çÆÀ</dname>';
+	xml += '<dloc>ÆÇ±³</dloc>';
+	xml += '</dept>';
+	
+	xml += '<dept>';
+	xml += '<dno>500</dno>';
+	xml += '<dname>ÃÑ¹«ÆÀ</dname>';
+	xml += '<dloc>ÆÇ±³</dloc>';
+	xml += '</dept>';
+	
+	xml += '<dept>';
+	xml += '<dno>600</dno>';
+	xml += '<dname>È«º¸ÆÀ</dname>';
+	xml += '<dloc>ÇÕÁ¤µ¿</dloc>';
+	xml += '</dept>';
+	
+	xml += '<dept>';
+	xml += '<dno>700</dno>';
+	xml += '<dname>°³¹ß3ÆÀ</dname>';
+	xml += '<dloc>ÆÄÁÖ</dloc>';
+	xml += '</dept>';
+	xml += '</deptList>';
+	
+	$(function() {
+		var xmlDoc = $.parseXML(xml);
+		var r = "";
+		$(xmlDoc).find("dept").each(function(i) {
+			r += "<div>";
+			r += "<h1>" + $(this).find("dno").html() + "</h1>";
+			r += "<p>" + $(this).find("dname").html() + 
+					"("+ $(this).find("dloc").html() +")</p>";
+			r += "</div>";
+		});
+		
+		$("body").html(r);
+	})
+});
+
+</script>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

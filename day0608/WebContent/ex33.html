@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.selected{
+	background:orange;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	var selLi;
+	$("#btnAdd").click(function() {
+		
+		var txt = $("input[type='text']").val();
+		var li = $("<li></li>");
+		
+		$(li).append(txt);
+		$("ul").append(li);
+		
+		$(li).click(function() {
+			selLi = $(this);
+			$("li").removeClass("selected");
+			$(this).addClass("selected");
+		})
+	});
+	
+	$("#btnUpdate").click(function() {
+		var str = $("input[type='text']").val();
+		$(selLi).html(str);
+		
+	});
+	
+	$("#btnDelete").click(function() {
+		$(selLi).remove();
+	});
+	
+});
+
+</script>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="text">
+	<button id="btnAdd">등록</button>
+	<button id="btnUpdate">수정</button>
+	<button id="btnDelete">삭제</button>
+	<hr>
+	<h2>인생을 살아가면서 중요한 것은?</h2>
+	<ul></ul>
+</body>
+</html>

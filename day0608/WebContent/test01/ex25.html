@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("#btnRemove").click(function() {
+		$("h2").removeAttr("data-index");
+	})
+	
+});
+
+</script>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<h2 data-index="0">홍길동</h2>
+<h2 data-index="1">강감찬</h2>
+<h2 data-index="2">이순신</h2>
+<button id="btnRemove">속성제거</button>
+</body>
+</html>

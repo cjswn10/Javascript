@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	var person = {name:"이현진"};
+	
+	$("#btnOk").click(function() {
+		var str = "";
+		$.each(person, function(key, value) {
+			str = str + key + " : " + value + "<br>";
+		});
+		
+		$("#info").html(str);
+		
+	});
+	
+	$("#btnAdd").click(function() {
+		$.extend(person, {age:50,addr:"대구광역시",tel:"051-123-4567"})
+		
+	});
+});
+
+</script>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+정보 : <span id="info"></span>
+<button id="btnAdd">속성추가</button>
+<button id="btnOk">확인</button>
+</body>
+</html>

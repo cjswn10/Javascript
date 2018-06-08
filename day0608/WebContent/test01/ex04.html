@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	var list = [
+		{name:"이현진",age:50,addr:"대구 광역시",tel:"053-123-4567"},
+		{name:"한상협",age:51,addr:"시드니",tel:"0432-342-1234"},
+		{name:"조성재",age:50,addr:"하와이",tel:"1234-5678-7777"}
+	];
+
+	$("#btnOk").click(function() {
+		$("#tb").html("<tr><td>이름</td><td>나이</td><td>주소</td><td>전화</td></tr>");
+
+		$.each(list, function(i, p) {
+			var tr = $("<tr></tr>");
+			$.each(p, function(key, attr) {
+				var td = $("<td></td>").html(attr);
+				$(tr).append(td);
+			})
+			$("#tb").append(tr);
+		})
+		
+	})
+	
+});
+
+</script>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>회원 목록</h2>
+<hr>
+<table id="tb" border="1" width="60%">
+</table>
+<button id="btnOk">확인</button>
+</body>
+</html>
