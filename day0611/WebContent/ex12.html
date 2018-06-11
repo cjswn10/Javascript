@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-1.6.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("h2").toggle(function(){
+		$(this).html("★" + $(this).html());
+	}, function(){
+		$(this).html($(this).html() + "★");
+	}, function(){
+		$(this).html($(this).html().substring(1, $(this).html().length-1));
+		//양쪽 별 제거
+	});
+});
+
+</script>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>임연주</h2>
+	<h2>변성인</h2>
+	<h2>차건우</h2>
+</body>
+</html>

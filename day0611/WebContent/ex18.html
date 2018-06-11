@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#canvas {
+	border: solid 1px orange;
+}
+</style>
+<script src="https://code.jquery.com/jquery-1.6.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	var canvas = document.getElementById("canvas");
+	var ctx = canvas.getContext("2d");
+	
+	
+	var grd = ctx.createLinearGradient(0, 0, 200, 0);
+	grd.addColorStop(0, "red");
+	grd.addColorStop(1, "white");
+
+	// Fill with gradient
+	ctx.fillStyle = grd;
+	ctx.fillRect(10, 10, 150, 80);
+	
+	$(canvas).toggle(function(){
+		var position = $(this).offset();
+		var x = event.pageX - position.left;
+		var y = event.pageY - position.top;
+		
+		context.beginPath();
+		context.moveTo(x, y);
+	}, function(){
+		var position = $(this).offset();
+		var x = event.pageX - position.left;
+		var y = event.pageY - position.top;
+		
+		context.lineTo(x, y);
+		context.stroke();
+	});
+	
+});
+
+</script>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<canvas id="canvas" width="500" height="300"></canvas>
+	
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+img {
+	width:100px;
+}
+</style>
+
+ <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#give").click(function() {
+		//$("#yj > img").appendTo("#bsi");
+		//자식중에 img
+		//$("#yj img").appendTo("bsi");
+		//후손 중에 img
+		$("#yj").find("img").appendTo("#bsi");
+	});
+})
+</script>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>건우 사랑</h2>
+<div id="gw">
+	<img src="img/ce.gif">
+	<img src="img/y.gif">
+	<img src="img/gong.jpg">
+	<img src="img/hyun.jpg">
+	<img src="img/shoe5.jpg">
+</div>
+
+<h2>연주 공</h2>
+<div id="yj">
+	<img src="img/ball1.jpg">
+	<img src="img/ball2.jpg">
+	<img src="img/ball3.jpg">
+	<img src="img/ball4.jpg">
+	<img src="img/ball5.jpg">
+</div>
+
+<hr>
+<h2>성인이 공</h2>
+<div id="bsi"></div>
+<button id="give">연주가 성인이한테 공을 다 준다</button>
+</body>
+</html>

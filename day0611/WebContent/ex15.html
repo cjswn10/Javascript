@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!-- 안해시밥ㅈ버ㅣㅏ미민ㅊ리ㅏㅓㄴㄹ;ㅁㅇ;ㅣㅓㅏㅁㄴ이ㅓㅣ -->
+<html>
+<head>
+<style type="text/css">
+img {
+	width: 150px;
+}
+
+div div {
+	padding: 5px;
+	margin: 5px;
+	border: pink 3px solid;
+	border-radius: 20px
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+var arr = [
+	{no:100,item:"나이키 까만공",price:10000,fname:"img/ball1.jpg"},
+	{no:101,item:"나이키 회색공",price:10000,fname:"img/ball2.jpg"},
+	{no:102,item:"나이키 하얀공",price:10000,fname:"img/ball3.jpg"},
+	{no:103,item:"나이키 초록공",price:10000,fname:"img/ball4.jpg"},
+	{no:104,item:"나이키 노란공",price:10000,fname:"img/ball5.jpg"}
+];
+
+var cartList = [];
+
+$(function() {
+
+	function addCartList(){
+		$("#cart").empty();
+		
+		$.each(cartList, function(i, p) {
+			var div = $("<div></div>").css("float", "left");
+			var item = $("<p class='item'></p>").html(p.item);
+			var price = $("<p class='price'></p>").html(p.price);
+			var img = $("<img/>").attr("src", p.fname);
+			var n = $("<p></p>").html(p.n);
+			
+			//노드에 상품번호를 추가함
+			$(div).attr("no",p.no);
+			$(div).attr("item",p.item);
+			$(div).attr("price",p.price);
+			$(div).attr("fname",p.fname);
+			
+			$(div).append(img, no, item, n);
+			$("#cart").append(div);
+		});
+	}
+	//cartList에 해당 상품이 있는지 검사하여 있다면 그 상품이 있는 위치(index)반환
+	function isAlready(no){
+		var idx = -1;
+		for(var i=0; i < cartList.length; i++){
+			if(cartList[i].no == no){
+				idx = i;
+				break;
+			}
+		}
+		return idx;
+	}
+	
+	
+	$.each(arr, function(i, g) {
+		var div = $("<div></div>").css("float", "left");
+		var item = $("<p class='item'></p>");
+		$(item).html(g.item);
+		var price = $("<p class='price'></p>");
+		$(price).html(g.price);
+		var img = $("<img/>");
+		$(img).attr("src", g.fname);
+		
+		//노드에 상품번호를 추가함
+		$(div).attr("no",g.no);
+		$(div).attr("item",g.item);
+		$(div).attr("price",g.price);
+		$(div).attr("fname",g.fname);
+		
+		
+		$(div).append(img, item, price);
+		$("#list").append(div);
+
+		//상품목록에서 더블클릭 ==>장바구니 담기
+		$(div).dblclick(function() {
+
+			var g = $(this).clone();
+			//더블클릭한 상품
+			
+			var no = $(g).attr("no");
+			var item = $(g).attr("item");
+			var price = $(g).attr("price");
+			var fname = $(g).attr("fname");
+			var n = 0;
+			
+			var idx = isAlready(no);
+
+			 if(idx != -1){
+	               n = cartList[idx].n;
+	               cartList.pop(idx);
+	               //$("#cart").   sddfsd.remove();
+	         }
+	         n++;
+			
+	        cartList.push({no:no,n:n});
+	        console.log(cartList);
+			
+	        addCartList();
+	        
+			//var cnt = $("<p></p>").html(n);
+			//$(g).append(cnt);
+			
+			//$("#cart").append(g);
+			
+			
+			
+			//var price = Number($(this).clone().find(".price").html());
+			//$("#total").html(Number($("#total").html()) + price);
+
+			$(g).dblclick(function() {
+				var price = Number($(this).find(".price").html());
+				$("#total").html(Number($("#total").html()) - price);
+				$(this).remove();
+			});
+
+		});
+
+	/*
+		$(div).bind("dblclick", function() {
+
+			$("#cart").append($(this).clone());
+
+			var price = eval($(this).clone().find(".price").html());
+			$("#total").html(Number($("#total").html()) + price);
+
+			$("#cart").find("div").dblclick(function() {
+
+				var price = Number($(this).find(".price").html());
+				$("#total").html(Number($("#total").html()) - price);
+				$(this).remove();
+			});
+
+		});
+	*/
+	
+	});//$.each
+
+});
+</script>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<td><h2>상품목록</h2></td>
+		</tr>
+		<tr>
+			<td><div id="list"></div></td>
+		</tr>
+		<tr>
+			<td><h2>장바구니</h2></td>
+		</tr>
+		<tr>
+			<td><div id="cart"></div></td>
+		</tr>
+	</table>
+	<hr>
+	총금액 :
+	<span id="total">0</span>
+</body>
+</html>

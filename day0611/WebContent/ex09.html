@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+.reverse {
+	background: black;
+	color: white;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("h1").mouseenter(function() {
+		$(this).addClass("reverse");
+	});
+	
+	$("h1").mouseleave(function() {
+		$(this).removeClass("reverse");
+	});
+});
+
+</script>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>임연주</h1>
+	<h1>변성인</h1>
+	<h1>차건우</h1>
+</body>
+</html>

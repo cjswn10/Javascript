@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.high_light {
+	background: yellow;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	//여러개의 함수를 동시에 등록할때 유용함
+	$("h1").bind({
+		click:function(){
+			$("#r").html($(this).html());
+		},
+		mouseenter:function(){
+			$(this).addClass("high_light");
+		},
+		mouseleave: function(){
+			$(this).removeClass("high_light");
+			
+		}
+	}) 
+		
+	
+});
+
+</script>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	선택된 회원 : <span id="r"></span>
+	<h1>김태욱</h1>
+	<h1>박은지</h1>
+	<h1>박가영</h1>
+</body>
+</html>

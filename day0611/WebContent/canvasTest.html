@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+#myCanvas {
+	border: 1px solid pink;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	var c = document.getElementById("myCanvas");
+	var ctx = c.getContext("2d");
+	var img = document.getElementById("ball");
+	ctx.drawImage(img, 10, 10);
+	
+});
+
+</script>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<canvas id="myCanvas" width="800" height="600"></canvas>
+	<img id="ball" src="img/re.png" width="20" height="20">
+</body>
+</html>
