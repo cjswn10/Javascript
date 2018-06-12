@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#myForm").submit(function(event){
+		var name = $("#name").val();
+		var pwd = $("#pwd").val();
+		alert(name + ", " + pwd);
+		
+		event.preventDefault();
+	})
+});
+</script>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<div id="goodsList"></div>
+	<form action="result.jsp" method="post" id="myForm">
+		<table>
+		<tr>
+			<td>이름: </td>
+			<td><input type="text" name="name" id="name"></td>
+		</tr>
+		<tr>
+			<td>비밀번호: </td>
+			<td><input type="password" name="pwd" id="pwd"></td>
+		</tr>
+		</table>
+		<input type="submit" value="제출">
+	</form>
+</body>
+</html>

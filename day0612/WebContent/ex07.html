@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+ul{
+	list-style: none;
+}
+#list{
+	margin: 10px;
+	padding: 20px;
+	border-collpase: collapse;
+	border: orange 10px;
+	border-style: ridge;
+	width: 300px;
+	height: 200px;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="js/jquery.innerfade.js"></script>
+<script type="text/javascript">
+
+$(function(){
+	var arr = [
+		{no:1000,item:"나이키 까만공",price:38000,qty:10,fname:"img/ball1.jpg"},
+		{no:1001,item:"나이키 회색공",price:27000,qty:5,fname:"img/ball2.jpg"},
+		{no:1002,item:"나이키 초록공",price:18000,qty:10,fname:"img/ball3.jpg"},
+		{no:1003,item:"나이키 하얀공",price:5000,qty:15,fname:"img/ball4.jpg"},
+		{no:1004,item:"나이키 노란공",price:125000,qty:10,fname:"img/ball5.jpg"}
+	];
+	
+	$.each(arr, function(i, g) {
+		var tr = $("<tr></tr>");
+		var td1 = $("<td></td>");
+		var td2 = $("<td></td>");
+		
+		var img = $("<img/>").attr({
+			src: g.fname,
+			width: 100
+		});
+		var p1 = $("<p></p>").html(g.item);
+		var p2 = $("<p></p>").html("(" + g.price + ")");
+		
+		$(td1).append(img);
+		$(td2).append(p1, p2);
+		
+		$(tr).append(td1, td2);
+		$("#list").append(tr);
+	});
+	
+	$("#list").innerfade({
+		animationtype: "fade",
+		speed: 750,
+		timeout: 2000,
+		type: "random",
+		containerheight: "200px" 
+	})
+});
+</script>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<table id="list"></table>
+</body>
+</html>

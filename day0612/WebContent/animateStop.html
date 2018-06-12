@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+   .i{
+      border: solid 5px pink;
+      margin: 10px;
+      border-radius: 30px;
+      padding: 10px;
+   }
+   
+   #total
+   {
+      color: red;
+   }
+   
+   .big
+   {
+      font-size: 20px;
+   }
+   #r{
+      height: 200px;
+      padding: 10px
+   }
+   
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+   $(function(){
+      var arr = [
+         {no:"100",item:"ball1",price:90000,qty:10,fname:"img/ball1.jpg"},
+         {no:"101",item:"ball2",price:70000,qty:10,fname:"img/ball2.jpg"},
+         {no:"102",item:"ball3",price:80000,qty:10,fname:"img/ball3.jpg"},
+         {no:"103",item:"ball4",price:880000,qty:10,fname:"img/ball4.jpg"},
+         {no:"104",item:"ball5",price:67000,qty:10,fname:"img/ball5.jpg"}
+      ];
+   
+      $.each(arr, function(i, elt) {
+         var div = $("<div></div>").css({
+            float:"left",
+            width:"100",
+            height:"150"
+         });
+         
+         $(div).hover(function(){
+            $(this).animate({width: "150",height: "200"},1000);
+            $(this).find("img").animate({width: "100",height: "100"},1000);
+            $(this).find("p").addClass("big");
+         },function(){
+            $(this).animate({width: "100",height: "150"},1000);
+            $(this).find("img").animate({width: "50",height: "50"},1000);
+            $(this).find("p").removeClass("big");
+         });
+         
+         
+         $(div).addClass("i");
+      
+         var img =$("<img/>").attr({
+            src: elt.fname,
+            width:"50",
+            height:"50"
+         });   
+      
+         var p1=$("<p class='item'></p>").html(elt.item);
+         var p2=$("<p class='price'></p>").html(elt.price);
+                     
+         $(div).append(img,p1,p2);
+         
+         $("#list").append(div);
+         
+         $(div).dblclick(function(){
+            
+            var g = $(this).clone();
+            $("#p").append(g);   
+            var price = Number($(g).find(".price").html());            
+            $("#total").html(  Number($("#total").html()) + price);
+            
+            $(g).dblclick(function(){
+               var price = Number($(this).find(".price").html());            
+               $("#total").html(Number($("#total").html()) - price);
+               $(this).remove();
+            });
+         });            
+      });
+      
+      
+      
+      $("#r").mouseleave(function() {
+      		$(".i").stop(true, true);
+      		$("img").stop(true, true);
+      		$("p").stop(true, true);
+      		
+      	   $(".i").animate({width: "100",height: "150"},1000);
+           $("img").animate({width: "50",height: "50"},1000);
+           $("p").removeClass("big");
+      });
+   });
+</script>
+</head>
+<body>
+   <table>
+   <tr><td>
+   <h2>상품목록</h2>
+   <div id="r">
+   <div id="list"></div>
+   </div>
+   </td></tr>
+   </table>
+   
+   <table>
+   <tr><td>
+   <h2>장바구니</h2>
+   <div id="p"></div>
+   </td></tr>
+   </table>
+   <hr>
+   총금액 : <span id="total">0</span>
+</body>
+</html>

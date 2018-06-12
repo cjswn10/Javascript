@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#all_check").change(function(){
+		var r = this.checked;
+		if(r){
+			$("#check_item").children().attr("checked", true);
+		}else {
+			$("#check_item").children().attr("checked", false);
+			
+		}
+	});
+});
+</script>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>좋아하는 동물</h2>
+	<input type="checkbox" id="all_check"/>
+	<label>All</label>
+	
+	<div id="check_item">
+		<input type="checkbox"/>
+		<label>강아지</label>
+		<input type="checkbox"/>
+		<label>고양이</label>
+		<input type="checkbox"/>
+		<label>펭귄</label>
+		<input type="checkbox"/>
+		<label>여우</label>
+		
+		
+	</div>
+</body>
+</html>

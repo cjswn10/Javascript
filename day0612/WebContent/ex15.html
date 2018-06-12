@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+.div{
+width: 100px;
+height: 100px;
+background-color: orange;
+position: relative;
+
+margin: 10px;
+
+}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+   
+   $(function() {
+      $(".div").each(function(idx) {
+         $(this).delay(idx*500);
+         $(this).animate({
+        	 left: "500"
+         }, 2000)
+      });
+   });
+
+   
+</script>
+</head>
+<body>
+<div class="div"></div>
+<div class="div"></div>
+<div class="div"></div>
+<div class="div"></div>
+<div class="div"></div>
+<div class="div"></div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	//next() h1노드 다음에 오는 노드-->div
+	$('h1').click(function() {
+		$(this).next().toggle("slow");
+		//toggle(속도)->show와 hide를 번갈아 시행
+		alert("효과 끝");
+	});
+		
+	
+});
+</script>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>OPEN & CLOSE</h1>
+	<div>
+		<h1>연주 공</h1>
+		<img src="img/ball5.jpg" width="100" height="100">
+	</div>
+
+	<h1>OPEN & CLOSE</h1>
+	<div>
+		<h1>성인이 공</h1>
+		<img src="img/ball1.jpg" width="100" height="100">
+	</div>		
+</body>
+</html>

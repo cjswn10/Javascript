@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+#square_wrapper {
+	padding: 10px;
+	background: black;
+	overflow: hidden;
+}
+
+.circle {
+	margin: 5px;
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+	background: pink;
+	float: left;
+}
+
+.square {
+	margin: 5px;
+	width: 50px;
+	height: 50px;
+	background: pink;
+	float: left;
+}
+
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="js/jquery.approach.js"></script>
+<script src="js/jquery.innerfade.js"></script>
+<script type="text/javascript">
+$(function(){
+	for(i=1; i<500; i++) {
+		$("#square_wrapper").append($("<div></div>").attr("class", "square"));
+	}
+		$(".square").approach({
+			opacity: "0.2"
+		}, 200)
+});
+</script>
+
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<div id="square_wrapper">
+
+
+</div>
+</body>
+</html>
