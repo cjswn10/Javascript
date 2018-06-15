@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" href="js\jquery-ui.min.css">
+<style type="text/css">
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.animation_canvas {
+	width: 600px;
+	height: 400px;
+	position: relative;
+	overflow: hidden;
+}
+
+.slider_panel {
+	width: 3000px;
+	position: relative;
+}
+
+.slider_image {
+	float: left;
+	width: 600px;
+	height: 400px;
+}
+
+.slider_text_panel {
+	position: absolute;
+	left: 50px;
+	top: 200px;
+}
+
+.slider_text {
+	position: absolute;
+	width: 250px;
+	height: 150px;
+	color: white;
+	
+}
+
+.control_panel {
+	position: absolute;
+	top: 380px;
+	left: 270px;
+	height: 13px;
+	overflow: hidden;
+}
+
+.control_button {
+	width: 12px;
+	height: 46px;
+	float: left;
+	cursor: pointer;
+	background: url("img/pBtn.png");
+}
+
+.control_button:hover {
+	top:-16px;
+}
+
+.control_button:active {
+	top:-31px;
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="js\jquery-ui.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$(".slider_text").css({
+		left:"-300px"
+	});
+	
+	$(".slider_text").each(function(idx) {
+		$(this).attr("data-index", idx);
+	});
+	
+	$(".control_button").each(function(idx) {
+		$(this).attr("data-index", idx);
+	});
+
+	function moveSlider(idx) {
+	      
+        var willMoveLeft = -(idx*600);
+        $(".slider_panel").animate({left: willMoveLeft},1000);
+        
+        $(".control_button[data-index=" + idx + "]").addClass("active");
+        $(".control_button[data-index!=" + idx + "]").removeClass("active");
+        
+        $(".slider_text[data-index="+idx+"]").show().animate({left: "0px"}, 1000);
+        $(".slider_text[data-index!="+idx+"]").hide().animate({left: "-300px"}, 1000);
+        
+    };
+        
+	$(".control_button").click(function() {
+	   var idx = $(this).attr("data-index");
+	   moveSlider(idx);
+	});
+	
+	var r = Math.round(Math.random() * 4);
+	moveSlider(r);
+	
+	
+});
+
+
+</script>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Test Header</h1>
+	<div class="animation_canvas">
+		<div class="slider_panel">
+			<img class="slider_image" src="img/j1.jpg">
+			<img class="slider_image" src="img/j2.jpg">
+			<img class="slider_image" src="img/ju1.jpg">
+			<img class="slider_image" src="img/ju2.jpg">
+			<img class="slider_image" src="img/suzy5.jpg">
+		</div>
+		
+		<div class="slider_text_panel">
+			<div class="slider_text">
+				<h1>주우재1</h1>
+				<p>주우재 잘생겼다.	주우재 잘생겼다	주우재 잘생겼다	주우재 잘생겼다	주우재 잘생겼다	주우재 잘생겼다</p>
+			</div>
+			<div class="slider_text">
+				<h1>주우재2</h1>
+				<p>주우재 잘생겼다.	주우재 잘생겼다	주우재 잘생겼다	주우재 잘생겼다	주우재 잘생겼다	주우재 잘생겼다</p>
+			</div>
+			<div class="slider_text">
+				<h1>임주환1</h1>
+				<p>임주환 잘생겼다.	임주환 잘생겼다	임주환 잘생겼다	임주환 잘생겼다	임주환 잘생겼다	임주환 잘생겼다</p>
+			</div>
+			<div class="slider_text">
+				<h1>임주환2</h1>
+				<p>임주환 잘생겼다.	임주환 잘생겼다	임주환 잘생겼다	임주환 잘생겼다	임주환 잘생겼다	임주환 잘생겼다</p>
+			</div>
+			<div class="slider_text">
+				<h1>수지</h1>
+				<p>수지 예쁘다</p>
+			</div>
+		</div>
+		
+		<div class="control_panel">
+			<div class="control_button"></div>		          
+			<div class="control_button"></div>		
+			<div class="control_button"></div>		
+			<div class="control_button"></div>		
+			<div class="control_button"></div>		
+		</div>
+	</div>
+	<h1>Test Header</h1>
+</body>
+</html>
